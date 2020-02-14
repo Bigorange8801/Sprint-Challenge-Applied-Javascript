@@ -38,7 +38,7 @@ Events are what a user does with an application, clicking, typing, etc.
 An event listener is an action you can create in javascript that runs in the browser for the user. Like mouseover. 
 
 4. Why would we convert a NodeList into an Array?
-Converting the node list allows us to see the data and all of the objects in the array. This allows us to call the data as wee need. 
+Converting the node list allows us to see the data and all of the objects in the array. This allows us to call the data as we need. 
 
 5. What is a component?
 Component is re-usable logic, behaviors and interface elements. 

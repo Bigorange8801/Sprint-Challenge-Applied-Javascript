@@ -20,13 +20,13 @@
 
 
 
-const createCards = document.querySelector('.cards-container')
+let createCards = document.querySelector('.cards-container')
 axios 
     .get("https://lambda-times-backend.herokuapp.com/articles")
-    .then(res =>{
-        console.log('here is your data',res.data.articles);
-     
-        const keys = Object.keys(res.data.articles)
+    .then(response =>{
+        console.log('here is your data',response.data.articles);
+        
+        const keys = Object.keys(response.data.articles)
         for (const key of keys){
            
             response.data.articles[key].forEach(e =>{
@@ -36,7 +36,7 @@ axios
             })
         }
         console.log('keys',keys);
-      
+        
 
       
     })
@@ -59,7 +59,7 @@ axios
         mainAuthor.classList.add('author');
         imageContainer.classList.add('img-container');
     
-       
+        
 
         mainCard.appendChild(mainHeadline);
         mainCard.appendChild(mainAuthor);
