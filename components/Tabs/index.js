@@ -19,18 +19,21 @@
         return tab;
     }
 
-    axios
-    .get(https://lambda-times-backend.herokuapp.com/topics)
-    .then( res =>{
-        topicsArr = res.date.topics;
-        console.log('test', topicsArr)
-        topicsArr.forEach(data => {
-            console.log('data', data);
+   
+    axios 
+    .get("https://lambda-times-backend.herokuapp.com/topics")
+    .then(res =>{
+        topicsArr= res.data.topics;
+        console.log('testing for ', topicsArr)
+        topicsArr.forEach(data =>{
+            console.log('data: ', data);
             const newTab = createTabs(data);
-            const topic = querySelctory('.topics');
-            topic.appendChild(newTab);
-        });
-        .catch(err =>{
-            console.group('falid to load', err)
-        });
+            const topicsContainer= document.querySelector('.topics');
+            topicsContainer.appendChild(newTab);
+        })
+    ;
+
+    })
+    .catch(err => {
+        console.group('Failure', err);
     });
